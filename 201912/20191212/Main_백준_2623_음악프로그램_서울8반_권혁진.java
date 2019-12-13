@@ -36,18 +36,18 @@ public class Main_백준_2623_음악프로그램_서울8반_권혁진 {
 			
 			int view_num = Integer.parseInt(temp.nextToken()); // 한 pd가 보는 가수의 수
 			int from = Integer.parseInt(temp.nextToken()); // 시작점
-			list[from] = new Node(from, list[from]);
-			for(int j = 0; j < view_num - 1; j++) {
-				
-				int to = Integer.parseInt(temp.nextToken()); // 도착점
-				
-				Node t = list[from];
-				while(t.next != null) {
-					t = t.next;
-				}
-				Node ne = new Node(to, null);
-				t.next = ne;
+			int to  = Integer.parseInt(temp.nextToken());
+			list[from] = new Node(to, list[from]);
+			arr[to]++;
+			
+			view_num -= 2;
+			
+			while(view_num > 0) {
+				from = to;
+				to = Integer.parseInt(temp.nextToken());
+				list[from] = new Node(to, list[from]);
 				arr[to]++;
+				view_num--;
 			}
 			
 		}
