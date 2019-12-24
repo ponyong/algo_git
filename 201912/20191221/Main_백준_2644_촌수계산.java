@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main_¹éÁØ_2644_ÃÌ¼ö°è»ê {
+public class Main_ë°±ì¤€_2644_ì´Œìˆ˜ê³„ì‚° {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -15,7 +15,7 @@ public class Main_¹éÁØ_2644_ÃÌ¼ö°è»ê {
 		int st = Integer.parseInt(str.nextToken());
 		int ed = Integer.parseInt(str.nextToken());
 		
-		int M = Integer.parseInt(br.readLine()); // °ü°è¼ö
+		int M = Integer.parseInt(br.readLine()); // ï¿½ï¿½ï¿½ï¿½ï¿½
 		int[][] map = new int[N+1][N+1];
 		boolean[] visit = new boolean[N+1];
 		for(int i = 0; i < M; i++) {
