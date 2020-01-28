@@ -1,4 +1,4 @@
-package ssafy;
+package home;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -22,42 +22,30 @@ public class Main_백준_1195_킥다운 {
 			one_len = two_len;
 			two_len = temp;
 		}
-		
-		int[] one_list = new int[one_len + two_len];
-		int[] two_list = new int[two_len];
-		
-		for(int i = 0; i < one_len; i++) {
-			one_list[i] = one.charAt(i) - '0';
-		}
-		
-		for(int i = 0; i < two_len; i++) {
-			two_list[i] = two.charAt(i) - '0';
-		}
-		
+	
 		// 넣을 수 있는 자리의 수
-		boolean flag = true;
-		int min = Integer.MAX_VALUE;
-		for(int i = 0; i < one_len; i++) {
+		int min = one_len + two_len;
+		for(int gap = two_len - 1; gap >= -one_len + 1; gap--) {
 			
-			for(int j = 0; j < two_len; j++) {
+			boolean flag = true; 
+			int cnt = 0;
+			for(int i = 0; i < two_len; i++) {
 				
-				if(two_list[j] == 2) {
-					
-					if(one_list[i + j] == 2) {
-						flag = false;
-						break;
-					}
-				}
-			}
-			if(flag) {
-				if(i + two_len <= one_len) {
-					min = Math.min(min, one_len);
+				int j = i - gap;
+				if(j < 0 || j >= one_len) continue;
+				
+				if((two.charAt(i) -'0') + (one.charAt(j) - '0') > 3) {
+					flag = false;
+					break;
 				}
 				else {
-					min = Math.min(min, i + two_len + 1);
+					++cnt;
 				}
 			}
-			flag = true;
+					
+			if(flag) {
+				min = Math.min(min, one_len + two_len - cnt);
+			}
 		}
 		System.out.println(min);
 	}
