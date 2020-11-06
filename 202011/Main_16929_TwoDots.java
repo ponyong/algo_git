@@ -8,8 +8,8 @@ public class Main_16929_TwoDots {
 	static char[][] map;
 	static boolean[][] check;
 	static int N, M;
-	static int[] dx = {0 , 0, -1 , 1 };
-	static int[] dy = {1 , -1, 0 , 0 };
+	static int[] dx = {1 , 0, -1 , 0 };
+	static int[] dy = {0 , 1, 0 ,  -1 };
 	static boolean ans;
 	private static void dfs(int i, int j, int dir) {
 		
