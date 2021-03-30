@@ -10,7 +10,7 @@ public class Main_5582_공통부분문자열 {
 		String s2 = br.readLine();
 		
 		int[][] dp = new int[s1.length() + 1][s2.length() + 1];
-		int max = Integer.MIN_VALUE;
+		int max = 0;
 		
 		for(int i = 1; i <= s1.length(); i++) {
 			for(int j = 1; j <= s2.length(); j++) {
